@@ -1,0 +1,23 @@
+<div class="bg-nav">
+    <button class="btn box-input">
+        <div class="row">
+            <p>aksldjfñals</p>
+            <p>aksldjfñals</p>
+        </div>
+        <div class="row">
+            <p>aksldjfñals</p>
+            <p>aksldjfñals</p>
+        </div>
+        <div class="row">
+            <p>aksldjfñals</p>
+            <p>aksldjfñals</p>
+        </div>
+        <div class="search-container">
+            <img class="image" src="assets/images/lupa.svg">
+            <p>Buscar</p>
+        </div>
+    </button>
+</div>
+<ng-container *ngFor="let item of jobOffers">
+    <app-listoffers [jobOffer]="item" ></app-listoffers>
+</ng-container>

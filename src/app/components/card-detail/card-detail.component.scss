@@ -1,0 +1,38 @@
+.card{
+  margin-left: 300px;
+  margin-right: 300px;
+  border-radius: 15px;
+  .card-text{
+    font-size: 16px;
+  }
+  .headerContainer{
+    max-height: 40px;
+  }
+}
+
+.card-img-left{
+  max-width: 80px;
+}
+
+.row{
+  p{
+    margin-top: 20px;
+  }
+}
+/*
+.col{
+  background: black;
+}
+.col-12{
+  background: blue;
+}*/
+.container{
+  span{
+    color: gray;
+    font-size: 10px;
+  }
+  p{
+    max-width: 90%;
+    font-size: 14px;
+  }
+}

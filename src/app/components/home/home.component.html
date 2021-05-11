@@ -1,0 +1,27 @@
+<div class="flex-container">
+  <div class="row position-absolute top-50 start-50 translate-middle ">
+    <div class="col-12 mx-auto">
+      <h1>Encuentra las mejores ofertas de empleo</h1>
+    </div>
+    <div class="w-100 mx-auto"></div>
+    <div class="col-12 mx-auto">
+      <div class="box-left">
+        <div class="box-input">
+          <input #name type="text" placeholder="Busca entre las ofertas de empleo" />
+          <button type="button" class="btn btn-search"><img class="image" src="assets/images/ic_search.svg"
+              alt="buscar" routerLink="/search"></button>
+        </div>
+        <p>Busca diseñador web, fullstack, programador android...</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="backList">
+  <div class="texto">
+    <p class="">Trabajos destacados de hoy</p>
+  </div>
+  <ng-container *ngFor="let item of jobOffers">
+    <app-listoffers [jobOffer]="item" ></app-listoffers>
+  </ng-container>
+
+</div>

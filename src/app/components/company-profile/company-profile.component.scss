@@ -1,0 +1,20 @@
+.flex-container{
+    background-color: #f2f2f2;
+    .primary-text{
+        width: 70%;
+        padding: 50px;
+        h2{
+            color: #0D1351 ;
+        }
+        p{
+            color: #0d1351b9
+        }
+    }
+    .alert{
+        width: 18%;
+        border-radius: 15px;
+        text-align: center;
+        padding: 10px;
+        margin-top: 30px;
+    }
+}
