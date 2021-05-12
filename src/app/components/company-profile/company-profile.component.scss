@@ -1,5 +1,7 @@
 .flex-container{
     background-color: #f2f2f2;
+    width: 100%;
+    height: 96vh;
     .primary-text{
         width: 70%;
         padding: 50px;
@@ -10,11 +12,5 @@
             color: #0d1351b9
         }
     }
-    .alert{
-        width: 18%;
-        border-radius: 15px;
-        text-align: center;
-        padding: 10px;
-        margin-top: 30px;
-    }
+
 }

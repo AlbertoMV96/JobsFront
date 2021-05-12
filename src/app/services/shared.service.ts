@@ -4,6 +4,10 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class SharedService {
+  user = false
+  navbarColor = false
+
+
   jobOffers = [
     {"photo": "../../../assets/images/shopifyImage.jpg", "title": "Diseñador Gráfico", "bussiness": "Shopify", "location": "Madrid, España", "time": "Tiempo completo", "created": "hace 7 días", "b": true, "g": false, "p": false, "o": false, "r": false},
     {"photo": "../../../assets/images/shopifyImage.jpg", "title": "Product Manager", "bussiness": "IskayPet", "location": "Full Remoto", "time": "Freelancer", "created": "hace 2 días", "b": false, "g": true, "p": false, "o": false, "r": false},
@@ -15,5 +19,14 @@ export class SharedService {
 
   getJobOffers(){
     return this.jobOffers
+  }
+  getNavbarChange(){
+    if(this.user === true){
+      this.navbarColor = true
+      return this.navbarColor
+    }else{
+      this.navbarColor = false
+      return this.navbarColor
+    }
   }
 }

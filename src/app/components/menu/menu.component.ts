@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedService } from 'src/app/services/shared.service';
+
 
 @Component({
   selector: 'app-menu',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  constructor() { }
+  user = false
+  navbarColor = false
+
+  constructor(private sharedService: SharedService) { }
 
   ngOnInit(): void {
+    this.getNavbarChange()
   }
 
+  getNavbarChange(){
+    console.log("Estoy entrando");
+
+    if(this.user === true){
+      this.navbarColor = true
+      console.log("True bro");
+      return this.navbarColor
+    }else{
+      this.navbarColor = false
+      console.log("Que ise loco soy false");
+      return this.navbarColor
+    }
+  }
 }

@@ -1,21 +1,20 @@
-.card{
+.card {
   margin-left: 300px;
   margin-right: 300px;
+  min-height: 496px;
   border-radius: 15px;
-  .card-text{
+  .card-text {
     font-size: 16px;
-  }
-  .headerContainer{
-    max-height: 40px;
+    margin-top: -8px;
   }
 }
 
-.card-img-left{
+.card-img-left {
   max-width: 80px;
 }
 
-.row{
-  p{
+.row {
+  p {
     margin-top: 20px;
   }
 }
@@ -26,13 +25,62 @@
 .col-12{
   background: blue;
 }*/
-.container{
-  span{
+.container {
+  span {
     color: gray;
     font-size: 10px;
   }
-  p{
+  p {
     max-width: 90%;
     font-size: 14px;
+  }
+  .insc {
+    height: 40px;
+    width: 150px;
+    border-radius: 10px;
+    background-color: #4052ff;
+    color: white;
+    font-size: 14px;
+    margin-bottom: 40px;
+  }
+  .btn:focus {
+    box-shadow: none;
+  }
+  .btn-ripple {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    transition: all ease-in-out .5s;
+  }
+
+  .btn-ripple::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 25%;
+    height: 100%;
+    width: 50%;
+    background-color: #000;
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+    transition: all ease-in-out 1s;
+    transform: scale(5, 5);
+  }
+
+  .btn-ripple:active::after {
+    padding: 0;
+    margin: 0;
+    opacity: .2;
+    transition: 0s;
+    transform: scale(0, 0);
+  }
+
+  .type {
+    border-radius: 10px;
+    background-color: #a4acff;
+    font-size: 14px;
+    color: #0026ff;
   }
 }
