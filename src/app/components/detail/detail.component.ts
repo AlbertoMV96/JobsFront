@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailComponent implements OnInit {
 
+  users = [
+    {"capital": "A", "name": "Alberto"},
+    {"capital": "D", "name": "Dani"},
+    {"capital": "A", "name": "Adrián"},
+    {"capital": "A", "name": "Andrei"},
+  ]
+
   constructor() { }
 
   ngOnInit(): void {
   }
-
 }

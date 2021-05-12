@@ -6,8 +6,8 @@
             </div>
             <div class="col-xxl">
              <div class="card-body">
-                  <h4 class="card-title">{{jobOffer.title}}</h4>
-                  <h2><small class="text-muted">{{jobOffer.bussiness}}</small></h2>
+                  <h4 class="card-title">{{jobOffer.name}}</h4>
+                  <h2><small class="text-muted">{{jobOffer.companyName}}</small></h2>
             </div>
         </div>
             <div class="col-sm">
@@ -15,7 +15,7 @@
             </div>
             <div class="col-sm">
                 <div class="card-color" [ngClass]="{'color-blue': jobOffer.b, 'color-green': jobOffer.g, 'color-purple': jobOffer.p, 'color-orange': jobOffer.o, 'color-red': jobOffer.r}">
-                    <h5 class="card-text"><small>{{jobOffer.time}}</small></h5>
+                    <h5 class="card-text"><small>{{jobOffer.type}}</small></h5>
                 </div>
             </div>
             <div class="col-md">

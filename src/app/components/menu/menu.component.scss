@@ -1,33 +1,137 @@
-
 .navbar {
-  background-color: rgb(115, 255, 0);
-  display: inline-flex !important;
-  .image{
-    width: 7%;
-  }
-  width: 60%;
-  .menuCenter {
-    color: white;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 100;
-    align-items: center;
-    display: flex;
-  }
-  .btn-light {
-    color: #0d1351;
-    height: 41px;
-    font-size: 14px;
-    margin-left: 30px;
-    border-radius: 6px;
-  }
-}
-.navbarBack {
-  background-color: red;
+  background-color: transparent;
   width: 100%;
+  form {
+    margin-top: 17px;
+    margin-bottom: 15px;
+    a {
+      margin-right: 30px;
+      text-decoration: none;
+      color: white;
+      &:hover {
+        color: rgb(207, 207, 207);
+      }
+    }
+  }
+  .image {
+    width: 8%;
+  }
   .d-flex {
     margin-left: auto;
     margin-right: 0;
   }
   display: inline-flex !important;
+}
+.navbarBack {
+  background-color: rgba(0, 17, 255, 0.486);
+  width: 100%;
+  form {
+    margin-top: -20px;
+    margin-bottom: 25px;
+    a {
+      margin-right: 30px;
+      text-decoration: none;
+      color: white;
+      &:hover {
+        color: rgb(207, 207, 207);
+      }
+    }
+  }
+  .image {
+    width: 8%;
+    margin-top: 19px;
+  }
+  .d-flex {
+    margin-left: auto;
+    margin-right: 0;
+  }
+  display: inline-flex !important;
+}
+
+.navbar-nav {
+  a {
+    text-decoration: none;
+  }
+  .nav-item {
+    visibility: hidden;
+  }
+}
+
+.navbar-navback {
+  a {
+    text-decoration: none;
+  }
+  display: flex;
+  flex-direction: row;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  .nav-item {
+    margin-right: 25px;
+    a {
+      color: white;
+      &:hover {
+        color: rgb(207, 207, 207);
+      }
+    }
+  }
+}
+
+.btn-light {
+  font-weight: bold;
+  &:hover{
+    background-color: rgb(233, 233, 233);
+  }
+}
+
+.btn-group {
+  margin-right: 20px;
+  .btn-danger {
+    background-color: transparent;
+    border: transparent;
+    &:focus {
+      box-shadow: 0 0 0 0.25rem rgb(225 83 97 / 0%);
+    }
+  }
+
+  .dropdown-menu {
+    margin-top: 15px;
+    background-color: transparent;
+    box-shadow: transparent;
+    border-color: white;
+    .dropdown-divider {
+      background-color: white;
+    }
+    .dropdown-item {
+      color: rgb(201, 201, 201);
+      &:hover {
+        background-color: transparent;
+        font-size: 17px;
+        color: rgb(255, 255, 255);
+      }
+    }
+  }
+}
+
+.square {
+  text-align: center;
+  width: 40px;
+  height: 35px;
+  background-color: lightblue;
+  border-radius: 10px;
+  margin-left: 2.5%;
+  h5 {
+    color: white;
+    font-size: 18px;
+    padding-top: 18%;
+  }
+}
+
+@media (max-width: 768px) {
+  .image {
+      width: 160px !important;
+      img {
+        margin-top: 19px;
+      }
+  }
 }

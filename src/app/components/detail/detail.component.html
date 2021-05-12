@@ -1,18 +1,16 @@
 <app-card-detail></app-card-detail>
-<p>4 candidatos inscritos</p>
-<div class="card mb-3" style="max-width: 800px;">
-    <div class="row g-0">
-        <div class="col">
-            <img src="" alt="...">
-        </div>
-        <div class="col-xxl">
-        <h4 class="card-title">asdfas</h4>
+<h1>4 candidatos inscritos</h1>
+<div class="card mb-3" style="max-width: 1310px;" *ngFor="let item of users">
+  <div class="row g-0">
+    <div class="col-8">
+      <div class="square">
+        <h5>{{item.capital}}</h5>
+      </div>
+      <p>{{item.name}}</p>
     </div>
-        <div class="col-sm">
-            <p class="card-text">asdfasdf</p>
-        </div>
-        <div class="col-md">
-            <p class="card-text">afsdfs</p>
-        </div>
+    <div class="col-4">
+        <button type="button" class="btn btn-primary"><i class="bi bi-file-earmark"></i>Visualizar CV</button>
+        <button type="button" class="btn btn-outline-primary"><i class="bi bi-telephone-fill"></i>Contactar</button>
     </div>
+  </div>
 </div>

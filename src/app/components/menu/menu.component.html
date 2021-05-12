@@ -1,26 +1,48 @@
-<nav class="navbar navbar-expand-lg " aria-label="Eighth navbar example"  [ngClass]="{'navbar':navbarColor,'navbarBack':!navbarColor }">
+<nav class=" navbar-expand-lg " aria-label="Eighth navbar example"
+  [ngClass]="{'navbar':navbarColor,'navbarBack':!navbarColor }">
   <div class="container">
-    <img class="image" src="../../../assets/images/sublimin.png" >
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+    <img class="image" src="../../../assets/images/sublimin.png">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07"
+      aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse">
-      <ul class="navbar-nav me-auto">
+      <ul class="navbar-nav me-auto" style="margin-left:100px ;" [ngClass]="{'navbar-navback':navbarColor,'navbar-nav':!navbarColor}">
         <li class="nav-item">
+         <a href="#">Buscar Ofertas</a>
+        </li>
+        <li class="nav-item">
+          <a href="#">Mis publicaciones</a>
         </li>
         <li class="nav-item">
         </li>
-        <li class="nav-item">
-
-        </li>
-
-
-
       </ul>
-<form  >
-  <a class="menuCenter">Iniciar sesión</a>
-          <button type="button" class="btn btn-light">Publicar oferta</button>
-</form>
+      <form *ngIf="showLogin">
+        <a href="#">Iniciar sesión</a>
+        <button type="button" class="btn btn-light">Publicar oferta</button>
+
+      </form>
+
+      <form *ngIf="showUser" >
+        <div class="btn-group" >
+          <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            Andrey M.
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Editar Datos</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Cerrar Sesion</a></li>
+
+          </ul>
+          <div class="square">
+            <h5>A</h5>
+          </div>
+        </div>
+
+        <button type="button" class="btn btn-light">Publicar oferta</button>
+
+      </form>
+
     </div>
   </div>
 </nav>

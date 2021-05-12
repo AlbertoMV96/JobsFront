@@ -9,9 +9,10 @@ import { SharedService } from 'src/app/services/shared.service';
 })
 export class MenuComponent implements OnInit {
 
-  user = false
+  user = true
   navbarColor = false
-
+  showUser = false
+  showLogin = true
   constructor(private sharedService: SharedService) { }
 
   ngOnInit(): void {
@@ -23,10 +24,14 @@ export class MenuComponent implements OnInit {
 
     if(this.user === true){
       this.navbarColor = true
+      this.showUser = true
+      this.showLogin = false
       console.log("True bro");
       return this.navbarColor
     }else{
       this.navbarColor = false
+      this.showUser = false
+      this.showLogin = true
       console.log("Que ise loco soy false");
       return this.navbarColor
     }

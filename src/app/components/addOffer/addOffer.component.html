@@ -1,0 +1,32 @@
+<h1>Añadir Oferta</h1>
+<div class="login-box">
+
+  <div class="form-savePerson">
+    <form>
+      <!--<img class="mb-4" src="assets/images/thepeople.svg" alt="">-->
+      <div class="form-floating">
+        <input type="text" class="form-control" id="floatingInput" placeholder="Titulo de la oferta"
+          value="{{jobOffer.name}}" >
+        <label for="floatingInput">Titulo</label>
+      </div>
+
+      <div class="form-floating mt-2">
+        <input type="text" class="form-control" id="floatingLocalizacion" placeholder="Nombre de la Empresa"  value="{{jobOffer.companyName}}">
+        <label for="floatingLocalizacion">Nombre Empresa</label>
+      </div>
+      <div class="form-floating mt-2">
+        <input type="text" class="form-control" id="floatingPassword" placeholder="Foto link" value="{{jobOffer.photo}}" >
+        <label for="floatingPassword">Foto</label>
+      </div>
+      <div class="form-floating mt-2">
+        <textarea class="form-control"  id="floatingText" placeholder="Descripcion"
+        value="{{jobOffer.description}}"></textarea>
+        <label for="floatingText">Descripcion</label>
+      </div>
+
+      <button class="w-100 btn btn-lg btn-warning" type="button">{{textButton}}</button>
+    </form>
+    <button class="w-100 btn btn-lg btn-link mt-3" type="button">Cancelar</button>
+  </div>
+</div>
+

@@ -1,10 +1,11 @@
 export class jobOffer{
   photo?: string;
-  title?: string;
-  bussiness?: string;
+  name?: string;
+  companyName?: string;
   location?: string;
-  time?: string;
+  type?: string;
   created?: string;
+  description?: string;
   b?: boolean;
   g?: boolean;
   p?: boolean;
