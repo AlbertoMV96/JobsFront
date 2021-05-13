@@ -1,0 +1,58 @@
+<div class="d-flex">
+  <div class="background">
+    <div class="login flex-column mx-auto position-absolute top-50 start-50 translate-middle">
+      <div class="form-signin">
+        <div class="imagen">
+          <img class="logo" src="../../../assets/images/sublimin@2.png" alt="">
+        </div>
+        <form [formGroup]="mForm" (ngSubmit)="onSubmit()">
+          <div class="form-floating mb-3">
+            <input name="name" type="text" [(ngModel)]="name" class="form-control" id="floatingInput" placeholder="Correo electrónico"
+              formControlName="name">
+            <label for="floatingInput">Nombre</label>
+            <div class="form-floating">
+              <div role="alert"></div>
+            </div>
+          </div>
+          <div class="mb-3" >
+            <select class="form-control"  style="padding: 15px;" [(ngModel)]="rol">
+              <option>User</option>
+              <option>Company</option>
+            </select>
+          </div>
+          <div class="form-floating mb-3">
+            <input name="email" type="email" [(ngModel)]="email" class="form-control" id="floatingInput" placeholder="Correo electrónico"
+              formControlName="email">
+            <label for="floatingInput">Correo Electronico</label>
+            <div class="form-floating">
+              <div role="alert"></div>
+            </div>
+          </div>
+          <div class="form-floating mb-3">
+            <input name="password" type="password"  [(ngModel)]="password" class="form-control" id="floatingPassword" placeholder="Password"
+              formControlName="password">
+            <label for="floatingPassword">Contraseña</label>
+          </div>
+          <div class="form-floating">
+            <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="Password"
+              formControlName="password">
+            <label for="floatingPassword">Repite Contraseña</label>
+          </div>
+          <div class="form-floating">
+            <div role="alert"></div>
+
+          </div>
+          <div class="d-flex flex-column mb-3">
+            <div class="mx-auto d-flex">
+              <a class="forgotPass" href="" routerLink="/registerUser">¿Ya tienes cuenta?</a>
+            </div>
+            <div class="mx-auto d-flex">
+              <button type="submit" class="btn btn-primary mx-auto">Registrarse</button>
+            </div>
+
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

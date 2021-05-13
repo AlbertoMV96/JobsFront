@@ -1,5 +1,5 @@
 <div class="offers" >
-    <div class="card mb-3" style="max-width: 800px;">
+    <div class="card mb-3">
         <div class="row g-0">
             <div class="col">
                 <img src="{{jobOffer.b}}" alt="...">
@@ -10,15 +10,15 @@
                   <h2><small class="text-muted">{{jobOffer.companyName}}</small></h2>
             </div>
         </div>
-            <div class="col-sm">
+            <div class="col-md">
                 <p class="card-text"><small class="text-muted">{{jobOffer.location}}</small></p>
             </div>
-            <div class="col-sm">
+            <div class="col-md">
                 <div class="card-color" [ngClass]="{'color-blue': jobOffer.b, 'color-green': jobOffer.g, 'color-purple': jobOffer.p, 'color-orange': jobOffer.o, 'color-red': jobOffer.r}">
                     <h5 class="card-text"><small>{{jobOffer.type}}</small></h5>
                 </div>
             </div>
-            <div class="col-md">
+            <div class="col-md create-offer">
                 <p class="card-text"><small class="text-muted">{{jobOffer.created}}</small></p>
             </div>
         </div>

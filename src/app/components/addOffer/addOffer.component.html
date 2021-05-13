@@ -1,32 +1,62 @@
-<h1>Añadir Oferta</h1>
-<div class="login-box">
+<div class="container">
 
-  <div class="form-savePerson">
-    <form>
-      <!--<img class="mb-4" src="assets/images/thepeople.svg" alt="">-->
-      <div class="form-floating">
-        <input type="text" class="form-control" id="floatingInput" placeholder="Titulo de la oferta"
-          value="{{jobOffer.name}}" >
-        <label for="floatingInput">Titulo</label>
-      </div>
+  <div class="row">
+    <h1 style="text-align: center;">Añadir Oferta</h1>
+  </div>
+  <div class="row">
+    <div class="login-box">
+      <div class="form-savePerson">
+        <form [formGroup]="mForm" (ngSubmit)="onSubmit()">
+          <!--<img class="mb-4" src="assets/images/thepeople.svg" alt="">-->
+          <div class="form-floating">
+            <input type="text" class="form-control" [(ngModel)]="name" id="floatingInput" formControlName="name" placeholder="Titulo de la oferta"
+              value="{{jobOffer.name}}">
+            <label for="floatingInput">Titulo</label>
+          </div>
 
-      <div class="form-floating mt-2">
-        <input type="text" class="form-control" id="floatingLocalizacion" placeholder="Nombre de la Empresa"  value="{{jobOffer.companyName}}">
-        <label for="floatingLocalizacion">Nombre Empresa</label>
-      </div>
-      <div class="form-floating mt-2">
-        <input type="text" class="form-control" id="floatingPassword" placeholder="Foto link" value="{{jobOffer.photo}}" >
-        <label for="floatingPassword">Foto</label>
-      </div>
-      <div class="form-floating mt-2">
-        <textarea class="form-control"  id="floatingText" placeholder="Descripcion"
-        value="{{jobOffer.description}}"></textarea>
-        <label for="floatingText">Descripcion</label>
-      </div>
+          <div class="form-floating mt-2">
+            <input type="text" class="form-control" id="floatingLocalizacion" [(ngModel)]="companyName" formControlName="companyName" placeholder="Nombre de la Empresa"
+              value="{{jobOffer.companyName}}">
+            <label for="floatingLocalizacion">Nombre Empresa</label>
+          </div>
+          <div class="form-floating mt-2">
+            <input type="text" class="form-control" id="floatingLocalizacion" [(ngModel)]="location" formControlName="location" placeholder="Localizacion"
+              value="{{jobOffer.location}}">
+            <label for="floatingLocalizacion">Localizacion</label>
+          </div>
+          <div class="form-floating mt-2">
+            <input type="text" class="form-control" id="floatingLocalizacion" [(ngModel)]="type" formControlName="type" placeholder="Tipo de contrato"
+              value="{{jobOffer.type}}">
+            <label for="floatingLocalizacion">Tipo de contrato</label>
+          </div>
+          <div class="file-upload">
+            <button class="file-upload-btn" type="button" (click)="formfiles.click()">Añadir Imagen</button>
+            <div class="image-upload-wrap" *ngIf="!customDisplay">
+              <input class="file-upload-input" [(ngModel)]="photo" formControlName="type" type='photo' (change)="handleFileInput($event);" accept="image/*" />
+              <div class="drag-text">
+                <h3>Arrastra y suelta una imagen para añadirla</h3>
+              </div>
+            </div>
+            <div class="file-upload-content" *ngIf="customDisplay">
+              <img class="file-upload-image" [src]="imagenSrc" alt="your image" />
+              <div class="image-title-wrap">
+                <button type="button" (click)="removeUpload()" class="remove-image">Remove <span
+                    class="image-title">Uploaded Image</span></button>
+              </div>
+            </div>
+          </div>
+          <input class="form-control  d-none" (change)="handleFileInput($event)" type="file" id="formFile" #formfiles>
 
-      <button class="w-100 btn btn-lg btn-warning" type="button">{{textButton}}</button>
-    </form>
-    <button class="w-100 btn btn-lg btn-link mt-3" type="button">Cancelar</button>
+          <div class="form-floating mt-2">
+            <textarea class="form-control" id="floatingText" placeholder="Descripcion"
+              value="{{jobOffer.description}}"></textarea>
+            <label for="floatingText">Descripcion</label>
+          </div>
+
+          <button class="btn-lg file-upload-btn" style="margin-top: 10px;" type="button">{{textButton}}</button>
+        </form>
+        <button class="w-100 btn btn-lg btn-link mt-3" type="button">Cancelar</button>
+      </div>
+    </div>
   </div>
 </div>
-

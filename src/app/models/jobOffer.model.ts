@@ -1,4 +1,5 @@
 export class jobOffer{
+  id?:string;
   photo?: string;
   name?: string;
   companyName?: string;

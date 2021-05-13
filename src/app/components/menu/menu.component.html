@@ -8,7 +8,7 @@
     </button>
     <div class="collapse navbar-collapse">
       <ul class="navbar-nav me-auto" style="margin-left:100px ;" [ngClass]="{'navbar-navback':navbarColor,'navbar-nav':!navbarColor}">
-        <li class="nav-item">
+        <li class="nav-item search-offers">
          <a href="#">Buscar Ofertas</a>
         </li>
         <li class="nav-item">
@@ -18,7 +18,7 @@
         </li>
       </ul>
       <form *ngIf="showLogin">
-        <a href="#">Iniciar sesión</a>
+        <a href="/login">Iniciar sesión</a>
         <button type="button" class="btn btn-light">Publicar oferta</button>
 
       </form>

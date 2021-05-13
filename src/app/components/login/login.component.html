@@ -1,0 +1,49 @@
+<div class="d-flex">
+    <div class="background">
+      <div class="login flex-column mx-auto position-absolute top-50 start-50 translate-middle">
+          <div class="form-signin">
+            <div class="imagen">
+    <img class="logo" src="../../../assets/images/sublimin@2.png" alt="">
+          </div>
+
+          <form [formGroup]="mForm" (ngSubmit)="onSubmit()">
+            <div class="form-floating mb-3">
+              <input name="email" type="email" [(ngModel)]="email" class="form-control" id="floatingInput"  formControlName="email"  placeholder="Correo electrónico" formControlName="email" [ngClass]="{'is-invalid': isSent && f.email.errors}">
+              <label for="floatingInput">Correo Electronico</label>
+              <div class="form-floating">
+                <div role="alert" ></div>
+              </div>
+            </div>
+            <div class="form-floating">
+              <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="Password"
+                formControlName="password" [(ngModel)]="password" [ngClass]="{'is-invalid': isSent && f.password.errors}">
+              <label for="floatingPassword">Contraseña</label>
+            </div>
+            <div class="form-floating">
+              <div role="alert"></div>
+
+            </div>
+            <div class="d-flex flex-column">
+              <div class="mx-auto d-flex">
+                <a class="forgotPass" href="" routerLink="/registerUser">¿Has olvidado tu contraseña?</a>
+              </div>
+
+
+              <div class="mx-auto d-flex">
+                <button type="submit" class="btn btn-primary mx-auto">Login</button>
+              </div>
+              <div class="mx-auto d-flex">
+                <a class="forgotPass" href="" routerLink="/register" style="margin-bottom: -20px ;">No tengo cuenta</a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-floating">
+    <div class="alert" role="alert" *ngIf="isSent && f.email.errors">
+    </div>
+    <div class="alert " role="alert" *ngIf="isSent && f.password.errors">
+    </div>
+</div>

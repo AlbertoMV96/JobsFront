@@ -1,6 +1,7 @@
 $normalTextSize: 16px;
 .card {
     height: 120px;
+    width: 800px;
     margin-right: auto;
     margin-left: auto;
     border-radius: 20px;
@@ -48,5 +49,14 @@ $normalTextSize: 16px;
         margin-top: 40px;
         height: fit-content;
         padding-bottom: 4%;
+    }
+}
+
+@media (max-width: 1450px) {
+    .create-offer {
+        visibility: hidden;
+    }
+    .col-sm {
+        visibility: visible;
     }
 }

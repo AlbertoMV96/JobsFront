@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-
 @Injectable({
   providedIn: 'root'
 })
@@ -15,7 +14,6 @@ export class SharedService {
     {"photo": "../../../assets/images/shopifyImage.jpg", "name": "Diseñador Gráfico", "companyName": "AliExpress", "location": "Pozuelo de Alcorcón, España", "type": "Prácticas", "created": "23/02/21", "b": false, "g": false, "p": false, "o": true, "r": false},
     {"photo": "../../../assets/images/shopifyImage.jpg", "name": "Programador Symfony", "companyName": "Shopify", "location": "Madrid, España", "type": "Proyecto", "created": "hace 7 días", "b": false, "g": false, "p": false, "o": false, "r": true},
   ]
-  constructor() { }
 
   getJobOffers(){
     return this.jobOffers

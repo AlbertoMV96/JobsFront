@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "sublimin-afde6": {
+      "hosting": {
+        "jobsFront": [
+          "sublimin-afde6"
+        ]
+      }
+    }
+  }
+}

@@ -9,6 +9,7 @@
     margin-top: -75px;
     h1 {
       margin-bottom: 30px;
+      line-height: 2.88vw;
       color: white;
       font-weight: bolder;
       font-size: 2.77vw;
@@ -22,7 +23,6 @@
       color: rgba(255, 255, 255, 0.575);
     }
   }
-
   .box-left {
     position: absolute;
     display: block;
@@ -81,13 +81,24 @@
     .row {
       width: 90%;
       h1 {
-          font-size: 70px;
+          font-size: 40px;
+          line-height: 36px;
       }
     }
   }
   .box-left {
       p {
-          font-size: 30px;
+          font-size: 16px;
       }
+  }
+  .box-input {
+    padding-top: 0 !important;
+    height: 50px;
+  }
+  .btn-search {
+    margin-top: -6px;
+  }
+  input {
+    font-size: 13px !important;
   }
 }
