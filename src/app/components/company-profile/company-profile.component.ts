@@ -10,6 +10,12 @@ export class CompanyProfileComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  //   this.router.params.subscribe(params=>{
+  //   this.jobService.getJob(params.id).subscribe(data=>{
+  //     console.log(data);
+  //     this.jobOffer = data
+  //    })
+  // })
   }
 
 }

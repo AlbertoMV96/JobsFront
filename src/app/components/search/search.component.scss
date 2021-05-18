@@ -5,6 +5,19 @@
     background-color: rgb(2, 0, 95);
     margin-bottom: 4%;
 }
+.input-group{
+    width: 90%;
+&:focus{
+    background-color: transparent;
+    box-shadow: transparent;
+    border-color: red;
+}
+    .form-select{
+        border-style: hidden;
+
+
+    }
+}
 .box-input {
     display: flex;
     position: absolute;

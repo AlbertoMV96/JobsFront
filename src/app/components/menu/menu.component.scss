@@ -2,6 +2,7 @@
   background-color: transparent;
   width: 100%;
   form {
+    float:right;
     margin-top: 17px;
     margin-bottom: 15px;
     a {
@@ -15,7 +16,7 @@
   }
   .image {
     width: 100px;
-    margin-top: -5px;
+    margin-top: -10px;
   }
   .d-flex {
     margin-left: auto;
@@ -23,11 +24,14 @@
   }
   display: inline-flex !important;
 }
-.navbarBack {
-  background-color: rgba(0, 17, 255, 0.486);
+.navbarUserCheck {
+  padding-top:10px ;
+  padding-bottom: 10px;
+  background-color: #02005f;
   width: 100%;
   form {
-    margin-top: -20px;
+    float:right;
+    margin-top: -10px;
     margin-bottom: 25px;
     a {
       margin-right: 30px;
@@ -39,8 +43,9 @@
     }
   }
   .image {
-    width: 8%;
+    width: 10%;
     margin-top: 19px;
+    margin-bottom: -22px !important;
   }
   .d-flex {
     margin-left: auto;
@@ -60,6 +65,7 @@
       margin-bottom: 16px;
 }
 .navbar-nav {
+  width: 20%;
   a {
     text-decoration: none;
   }
@@ -73,9 +79,10 @@
     text-decoration: none;
   }
   display: flex;
+  margin-left: 150px;
+  margin-top: -10px;
   flex-direction: row;
   padding-left: 0;
-  margin-bottom: 0;
   list-style: none;
   .nav-item {
     margin-right: 25px;

@@ -20,10 +20,15 @@
               </div>
           </div>
           <div class="col-12" style="width: 2%;margin-left: -100px;top:0;" >
-              <a href="">
+            <div class="dropdown" >
+              <a (click)="displayList()">
                 <img src="../../../assets/images/vertmenu.svg" alt="">
               </a>
-
+                <div class="dropdown-content" [ngClass]="{'dropdown-content':dropdown,'dropdown-content-off':!dropdown}">
+                  <a href="/detail:id">Ver Detalle</a>
+                  <a href="#">Eliminar</a>
+                </div>
+            </div>
           </div>
         </div>
       </div>

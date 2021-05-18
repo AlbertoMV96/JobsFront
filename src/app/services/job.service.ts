@@ -27,16 +27,31 @@ export class JobService {
     );
   }
 
-  getJobs(filter: string): Observable<any> {
+  getJobsWithQuery(filter: string): Observable<any> {
     const params = { filter: filter }
-    return this.httpClient.get(`${environment.apiUrl}/jobs`, { params: params })
+    return this.httpClient.get(`${environment.apiUrl}/jobs/query`, { params: params })
       .pipe(
         catchError(error => {
           return error;
         })
       );
   }
-
+  getJobs(): Observable<any> {
+    return this.httpClient.get(`${environment.apiUrl}/jobs`)
+      .pipe(
+        catchError(error => {
+          return error;
+        })
+      );
+  }
+  getJobsCompany(): Observable<any> {
+    return this.httpClient.get(`${environment.apiUrl}/jobs`)
+      .pipe(
+        catchError(error => {
+          return error;
+        })
+      );
+  }
   postJob(job: jobOffer): Observable<any> {
     return this.httpClient.post(`${environment.apiUrl}/job`, job).pipe(
       catchError(error => {
@@ -53,7 +68,7 @@ export class JobService {
   }
 
   updateJob(job: jobOffer): Observable<any> {
-    return this.httpClient.put(`${environment.apiUrl}/job/${job.id}`, job).pipe(
+    return this.httpClient.put(`${environment.apiUrl}/job/${job._id}`, job).pipe(
       catchError(error => {
         return error;
       })

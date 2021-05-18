@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth/auth.service';
 import { SharedService } from 'src/app/services/shared.service';
 
 
@@ -8,27 +10,35 @@ import { SharedService } from 'src/app/services/shared.service';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
+  @Input() userName: any = {};
 
-  user = true
+  user = false
   navbarColor = false
   showUser = false
   showLogin = true
-  constructor(private sharedService: SharedService) { }
+  constructor(private sharedService: SharedService, private router: Router, private authService: AuthService) { }
 
   ngOnInit(): void {
-    this.getNavbarChange()
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        if (this.authService.isAuthenticated()) {
+          this.userName = this.sharedService.getUsername()
+          this.user = true
+          this.getNavbarChange()
+        }
+      }
+    })
   }
 
-  getNavbarChange(){
+  getNavbarChange() {
     console.log("Estoy entrando");
-
-    if(this.user === true){
+    if (this.user === true) {
       this.navbarColor = true
       this.showUser = true
       this.showLogin = false
       console.log("True bro");
       return this.navbarColor
-    }else{
+    } else {
       this.navbarColor = false
       this.showUser = false
       this.showLogin = true

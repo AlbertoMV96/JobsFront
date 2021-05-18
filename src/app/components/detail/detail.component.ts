@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { JobService } from 'src/app/services/job.service';
 
 @Component({
   selector: 'app-detail',
@@ -7,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailComponent implements OnInit {
 
+
   users = [
     {"capital": "A", "name": "Alberto"},
     {"capital": "D", "name": "Dani"},
@@ -14,8 +17,14 @@ export class DetailComponent implements OnInit {
     {"capital": "A", "name": "Andrei"},
   ]
 
-  constructor() { }
+  constructor(private router:ActivatedRoute,private jobService:JobService) { }
 
   ngOnInit(): void {
+    this.router.params.subscribe(params=>{
+       this.jobService.getJob(params.id).subscribe(data=>{
+         console.log(data);
+        //this.jobOffer = data
+       })
+    })
   }
 }

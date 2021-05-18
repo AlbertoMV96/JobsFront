@@ -6,7 +6,6 @@ export class SharedService {
   user = false
   navbarColor = false
 
-
   jobOffers = [
     {"photo": "../../../assets/images/shopifyImage.jpg", "name": "Diseñador Gráfico", "companyName": "Shopify", "location": "Madrid, España", "type": "Tiempo completo", "created": "hace 7 días", "b": true, "g": false, "p": false, "o": false, "r": false},
     {"photo": "../../../assets/images/shopifyImage.jpg", "name": "Product Manager", "companyName": "IskayPet", "location": "Full Remoto", "type": "Freelancer", "created": "hace 2 días", "b": false, "g": true, "p": false, "o": false, "r": false},
@@ -15,6 +14,9 @@ export class SharedService {
     {"photo": "../../../assets/images/shopifyImage.jpg", "name": "Programador Symfony", "companyName": "Shopify", "location": "Madrid, España", "type": "Proyecto", "created": "hace 7 días", "b": false, "g": false, "p": false, "o": false, "r": true},
   ]
 
+  getUsername(){
+    return localStorage.getItem('username')!!
+  }
   getJobOffers(){
     return this.jobOffers
   }

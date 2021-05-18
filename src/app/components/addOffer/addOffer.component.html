@@ -1,5 +1,4 @@
 <div class="container">
-
   <div class="row">
     <h1 style="text-align: center;">Añadir Oferta</h1>
   </div>
@@ -9,30 +8,36 @@
         <form [formGroup]="mForm" (ngSubmit)="onSubmit()">
           <!--<img class="mb-4" src="assets/images/thepeople.svg" alt="">-->
           <div class="form-floating">
-            <input type="text" class="form-control" [(ngModel)]="name" id="floatingInput" formControlName="name" placeholder="Titulo de la oferta"
-              value="{{jobOffer.name}}">
+            <input type="text" class="form-control" [(ngModel)]="name" id="floatingInput" formControlName="name"
+              placeholder="Titulo de la oferta" value="{{jobOffer.name}}">
             <label for="floatingInput">Titulo</label>
           </div>
 
           <div class="form-floating mt-2">
-            <input type="text" class="form-control" id="floatingLocalizacion" [(ngModel)]="companyName" formControlName="companyName" placeholder="Nombre de la Empresa"
-              value="{{jobOffer.companyName}}">
+            <input type="text" class="form-control" id="floatingLocalizacion" [(ngModel)]="companyName"
+              formControlName="companyName" placeholder="Nombre de la Empresa" value="{{jobOffer.companyName}}">
             <label for="floatingLocalizacion">Nombre Empresa</label>
           </div>
           <div class="form-floating mt-2">
-            <input type="text" class="form-control" id="floatingLocalizacion" [(ngModel)]="location" formControlName="location" placeholder="Localizacion"
-              value="{{jobOffer.location}}">
+            <input type="text" class="form-control" id="floatingLocalizacion" [(ngModel)]="location"
+              formControlName="location" placeholder="Localizacion" value="{{jobOffer.location}}">
             <label for="floatingLocalizacion">Localizacion</label>
           </div>
           <div class="form-floating mt-2">
-            <input type="text" class="form-control" id="floatingLocalizacion" [(ngModel)]="type" formControlName="type" placeholder="Tipo de contrato"
-              value="{{jobOffer.type}}">
-            <label for="floatingLocalizacion">Tipo de contrato</label>
+              <div class="input-group mb-3" style="height: 50px;" >
+                <select class="form-select" id="floatingLocalizacion" [(ngModel)]="type" formControlName="type"
+                 value="{{jobOffer.type}}">
+                  <option selected>Tipo de oferta</option>
+                  <option value="1">Tiempo completo</option>
+                  <option value="2">Tiempo parcial</option>
+                </select>
+              </div>
           </div>
           <div class="file-upload">
             <button class="file-upload-btn" type="button" (click)="formfiles.click()">Añadir Imagen</button>
             <div class="image-upload-wrap" *ngIf="!customDisplay">
-              <input class="file-upload-input" [(ngModel)]="photo" formControlName="type" type='photo' (change)="handleFileInput($event);" accept="image/*" />
+              <input class="file-upload-input" [(ngModel)]="photo" formControlName="type" type='file'
+                (click)="formfiles.click()" (change)="handleFileInput($event);" accept="image/*" />
               <div class="drag-text">
                 <h3>Arrastra y suelta una imagen para añadirla</h3>
               </div>

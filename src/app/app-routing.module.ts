@@ -21,7 +21,7 @@ const routes: Routes = [
 //   canActivate: [AuthGuardService],
 //   },
 {path: "company-profile", component:CompanyProfileComponent},
-{path: "addOffer", component:AddOfferComponent},
+{path: "addOffer", component:AddOfferComponent, canActivate: [AuthGuardService]},
 {path: "detail/:id", component:DetailComponent},];
 
 @NgModule({

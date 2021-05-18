@@ -1,8 +1,8 @@
 <div class="offers" >
-    <div class="card mb-3">
+    <div class="card mb-3" routerLink="detail/{{jobOffer._id}}">
         <div class="row g-0">
             <div class="col">
-                <img src="{{jobOffer.b}}" alt="...">
+                <img src="{{jobOffer.photo}}" alt="...">
             </div>
             <div class="col-xxl">
              <div class="card-body">
@@ -14,12 +14,12 @@
                 <p class="card-text"><small class="text-muted">{{jobOffer.location}}</small></p>
             </div>
             <div class="col-md">
-                <div class="card-color" [ngClass]="{'color-blue': jobOffer.b, 'color-green': jobOffer.g, 'color-purple': jobOffer.p, 'color-orange': jobOffer.o, 'color-red': jobOffer.r}">
+                <div class="card-color" [ngClass]="{'color-blue': (jobOffer.type ==='Tiempo completo' || jobOffer.type ==='Full-time' ),'color-pink': (jobOffer.type ==='Interno' || jobOffer.type ==='Internship' ), 'color-green': jobOffer.type ==='Freelancer', 'color-purple': (jobOffer.type ==='Tiempo parcial' || jobOffer.type ==='Partial' ), 'color-orange': (jobOffer.type ==='Practice' || jobOffer.type ==='Prácticas' ), 'color-red': (jobOffer.type ==='Proyecto' || jobOffer.type ==='Project' )}">
                     <h5 class="card-text"><small>{{jobOffer.type}}</small></h5>
                 </div>
             </div>
             <div class="col-md create-offer">
-                <p class="card-text"><small class="text-muted">{{jobOffer.created}}</small></p>
+                <p class="card-text"><small class="text-muted">{{jobOffer.updatedAt}}</small></p>
             </div>
         </div>
     </div>

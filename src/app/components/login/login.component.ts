@@ -1,20 +1,23 @@
 import { JobService } from '../../../app/services/job.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { User } from '../../models/user.model';
 import { Location } from '@angular/common';
+import { SharedService } from 'src/app/services/shared.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  @Output() myEvent = new EventEmitter();
+
   email = ""
   password = ""
   mForm: FormGroup;
   isSent = false
-  constructor(private router: Router, private fb: FormBuilder, private jobService: JobService) {
+  constructor(private router: Router, private fb: FormBuilder, private jobService: JobService, private sharedService: SharedService) {
 
     this.mForm = this.fb.group({
       email: ['', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
@@ -23,6 +26,9 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    if(this.sharedService.getUsername()!=null && this.sharedService.getUsername()!=""){
+      this.router.navigate(["/"])
+    }
   }
   // signup() {
   //   this.router.navigate(["/register"])
@@ -50,7 +56,8 @@ export class LoginComponent implements OnInit {
         (data) => {
           localStorage.setItem('token', data.access_token)
           localStorage.setItem('username', data.username)
-          this.router.navigate(["/home"])
+          this.router.navigate(["/"])
+          //window.location.reload()
         },
         (error) => {
           console.log("Error:", error);
@@ -58,7 +65,7 @@ export class LoginComponent implements OnInit {
       );
     }
     console.log("Login Valido", this.mForm.value)
-    this.router.navigate(["/"])
+
 
   }
 
