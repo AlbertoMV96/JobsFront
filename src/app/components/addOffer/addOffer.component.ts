@@ -90,6 +90,7 @@ export class AddOfferComponent implements OnInit {
 
 
   addOffer() {
+
     const job: jobOffer = new jobOffer()
     job.name = "Desarrollador Android"
     this.jobService.postJob(job).subscribe((data) => {
